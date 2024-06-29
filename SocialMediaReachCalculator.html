@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Reach Calculator</title>
+</head>
+<body>
+    <h1>Instagram Reach Calculator</h1>
+    <label for="followers">Enter Number of Followers:</label>
+    <input type="number" id="followers" name="followers">
+    <button onclick="calculateReachImpressions()">Calculate</button>
+
+    <h2>Results:</h2>
+    <p id="reachResult"></p>
+    <p id="impressionsResult"></p>
+
+    <script>
+        const averageReachRate = 0.25;
+        const averageImpressionsMultiplier = 1.8;
+
+        function calculateReachImpressions() {
+            const followers = document.getElementById('followers').value;
+            const reach = followers * averageReachRate;
+            const impressions = reach * averageImpressionsMultiplier;
+
+            document.getElementById('reachResult').innerText = `Estimated Reach: ${Math.floor(reach)}`;
+            document.getElementById('impressionsResult').innerText = `Estimated Impressions: ${Math.floor(impressions)}`;
+        }
+    </script>
+</body>
+</html>
